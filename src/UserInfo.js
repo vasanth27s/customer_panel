@@ -25,7 +25,7 @@ const UserInfo = () => {
     <div className="user-info-container">
       <header>
         <div className="logo">
-          <img src="C:\Users\mohan\sample-app\src\fctc.png" alt="FCTCTOKEN Logo" />
+        <img src={require("./fctc.png")} alt="Logo" className="logo" width="100"height="80px" />
         </div>
         <h1>User Information</h1>
       </header>

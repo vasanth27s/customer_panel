@@ -1,11 +1,11 @@
-import React from 'react';
-import './main.css';
+import React from "react";
+import "./main.css";
 
 const App = () => {
   return (
     <div className="app">
       <header className="header">
-        <img src="fctc.png" alt="Logo" className="logo" />
+        <img src={require("./fctc.png")} alt="Logo" className="logo" width="120"height="100px" />
       </header>
       <div className="withdrawal-container">
         <h1 className="title">Withdraw FCTC</h1>
@@ -19,14 +19,21 @@ const App = () => {
             Currency:
             <select name="currency">
               <option value="USDT">USDT</option>
+              <option value="FCTC">FCTC</option>
               {/* Add more options if needed */}
             </select>
           </label>
           <label>
             Withdrawal Address:
-            <input type="text" name="address" placeholder="Enter withdrawal address" />
+            <input
+              type="text"
+              name="address"
+              placeholder="Enter withdrawal address"
+            />
           </label>
-          <button type="submit" className="confirm-button">Confirm Withdrawal</button>
+          <button type="submit" className="confirm-button">
+            Confirm Withdrawal
+          </button>
         </form>
       </div>
     </div>

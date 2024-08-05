@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './IntroducerReward.css'; // Import the CSS file
 
-const DailyIntroducerReward = () => {
+const IntroducerReward = () => {
   const [dailyBonus, setDailyBonus] = useState('Loading...');
 
   // Function to calculate staking bonus
@@ -57,4 +57,4 @@ const DailyIntroducerReward = () => {
   );
 };
 
-export default DailyIntroducerReward;
+export default IntroducerReward;

@@ -10,114 +10,74 @@ import './dashboard.css';
 const Dashboard = () => {
   const navigate = useNavigate();
 
-  const handleWalletButtonClick = () => {
-    navigate('/withdraw');
+  const navigationHandlers = {
+    handleWalletButtonClick: () => navigate('/withdraw'),
+    handleStackedCoinsClick: () => navigate('/StackedCoins'),
+    handleStakingBonusClick: () => navigate('/StakingBonus'),
+    handleDailyStakingBonusClick: () => navigate('/dailyStakingBonus'),
+    handleIntroducerRewardClick: () => navigate('/IntroducerReward'),
+    handleDailyIntroducerRewardClick: () => navigate('/DailyIntroducerReward'),
+    handleLevelIncomepageClick: () => navigate('/LevelIncomepage'),
+    handleDailyCommunityRewardClick: () => navigate('/LevelIncomepage'),
+    handleDailyEarningsClick: () => navigate('/DailyEarnings'),
+    handleTotalEarningsDashboardClick: () => navigate('/TotalEarningsDashboard'),
+    handleComingSoonClick: () => navigate('/ComingSoon'),
+    handleProfileInfoClick: () => navigate('/userinfo'),
+    handleKycFormClick: () => navigate('/KycForm'),
+    handleChangePasswordClick: () => navigate('/ChangePassword'),
+    handleDepositClick: () => navigate('/Deposit'),
+    handleReferralProgramClick: () => navigate('/ReferralProgram'),
+    handleReportsClick: () => navigate('/Reports'),
+    handleLogin: () => navigate('/Login')
   };
 
-  const handleStakedCoinsClick = () => {
-    navigate('/Stakedcoin');
-  };
-
-  const handleStakingBonusClick = () => {
-    navigate('/stakingBonus');
-  };
-
-  const handleDailyStakingBonusClick = () => {
-    navigate('/dailyStakingBonus');
-  };
-
-  const handleIntroducerRewardClick = () => {
-    navigate('/IntroducerReward');
-  };
-
-  const handleDailyIntroducerRewardClick = () => {
-    navigate('/dailyIntroducerReward');
-  };
-
-  const handleLevelIncomepageClick = () => {
-    navigate('/LevelIncomepage');
-  };
-
-  const handleDailyCommunityRewardClick = () => {
-    navigate('/LevelIncomepage');
-  };
-
-  const handleDailyEarningsClick = () => {
-    navigate('/DailyEarnings');
-  };
-
-  const handleTotalEarningsDashboardClick = () => {
-    navigate('/TotalEarningsDashboard');
-  };
-
-  const handleComingSoonClick = () => {
-    navigate('/ComingSoon');
-  };
-
-  const handleProfileInfoClick = () => {
-    navigate('/userinfo');
-  };
-  const handleKycFormClick = () => {
-    navigate('/KycForm');
-  };
-  const handleChangePasswordClick = () => {
-    navigate('/ChangePassword');
-  };
-  const handleDepositClick = () => {
-    navigate('/Deposit');
-  };
-  const handleReferralProgramClick = () => {
-    navigate('/ReferralProgram');
-  };
-  const handleReportsClick = () => {
-    navigate('/Reports');
-  };
-  const handleLogin = () => {
-    navigate('/Login');
+  const handleLogout = () => {
+    // Perform logout logic here (e.g., clearing tokens)
+    navigate('/login');
   };
 
   return (
-    <div className="container">
+    <div className="main">
       <nav className="sidebar">
         <div className="logo">DASHBOARD</div>
         <ul className="navigation">
           <li className="profile">
             <FontAwesomeIcon icon={faUser} /> Profile
             <div className="dropdown-content">
-              <a onClick={handleProfileInfoClick}>Info</a>
-              <a onClick={handleKycFormClick}>KYC</a>
-              <a onClick={handleChangePasswordClick}>Change Password</a>
+              <a onClick={navigationHandlers.handleProfileInfoClick}>Info</a>
+              <a onClick={navigationHandlers.handleKycFormClick}>KYC</a>
+              <a onClick={navigationHandlers.handleChangePasswordClick}>Change Password</a>
             </div>
           </li>
           <li className="staking">
             <FontAwesomeIcon icon={faCoins} /> Staking
             <div className="dropdown-content">
-              <a onClick={handleStakingBonusClick}>Staking</a>
+              <a onClick={navigationHandlers.handleStakingBonusClick}>Staking</a>
               <p>*My Staking*</p>
             </div>
           </li>
           <li className="deposit">
             <FontAwesomeIcon icon={faWallet} /> Wallet
             <div className="dropdown-content">
-              <a onClick={handleWalletButtonClick}>Withdraw</a>
-              <a onClick={handleDepositClick}>Deposit</a>
+              <a onClick={navigationHandlers.handleWalletButtonClick}>Withdraw</a>
+              <a onClick={navigationHandlers.handleDepositClick}>Deposit</a>
             </div>
           </li>
           <li className="team">
             <FontAwesomeIcon icon={faUsers} /> Team
             <div className="dropdown-content">
-              <a onClick={handleReferralProgramClick}>Referral</a>
-              <a onClick={handleLevelIncomepageClick}>Level</a>
+              <a onClick={navigationHandlers.handleReferralProgramClick}>Referral</a>
+              <a onClick={navigationHandlers.handleLevelIncomepageClick}>Level</a>
             </div>
           </li>
           <li className="report">
             <FontAwesomeIcon icon={faChartLine} /> Report
             <div className="dropdown-content">
-              <a onClick={handleReportsClick}>Reports</a>
+              <a onClick={navigationHandlers.handleReportsClick}>Reports</a>
             </div>
           </li>
-          <li>
-            <FontAwesomeIcon icon={faSignOutAlt} /> <a onClick={handleLogin}>Logout</a>
+          <li className="logout" onClick={handleLogout}>
+            <FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span>
           </li>
         </ul>
       </nav>
@@ -140,41 +100,41 @@ const Dashboard = () => {
             <FontAwesomeIcon icon={faUsers} />
             <h2>FCTC WALLET</h2>
             <h3>4000</h3>
-            <button id="walletButton" className="wallet-button" onClick={handleWalletButtonClick}>Withdraw</button>
+            <button id="walletButton" className="wallet-button" onClick={navigationHandlers.handleWalletButtonClick}>Withdraw</button>
           </div>
-          <div className="card card2" onClick={handleStakedCoinsClick}>
+          <div className="card card2" onClick={navigationHandlers.handleStackedCoinsClick}>
             <FontAwesomeIcon icon={faUserPlus} />
             <h2>STAKED COINS</h2>
           </div>
-          <div className="card card3" onClick={handleStakingBonusClick}>
+          <div className="card card3" onClick={navigationHandlers.handleStakingBonusClick}>
             <FontAwesomeIcon icon={faUserCheck} />
             <h2>STAKING BONUS</h2>
           </div>
-          <div className="card card4" onClick={handleDailyStakingBonusClick}>
+          <div className="card card4" onClick={navigationHandlers.handleDailyStakingBonusClick}>
             <FontAwesomeIcon icon={faWallet} />
             <h2>Daily Staking Bonus</h2>
           </div>
-          <div className="card card5" onClick={handleIntroducerRewardClick}>
+          <div className="card card5" onClick={navigationHandlers.handleIntroducerRewardClick}>
             <FontAwesomeIcon icon={faUserTimes} />
             <h2>INTRODUCER REWARD</h2>
           </div>
-          <div className="card card6" onClick={handleDailyIntroducerRewardClick}>
+          <div className="card card6" onClick={navigationHandlers.handleDailyIntroducerRewardClick}>
             <FontAwesomeIcon icon={faUserTimes} />
             <h2>DAILY INTRODUCER REWARD</h2>
           </div>
-          <div className="card card7" onClick={handleLevelIncomepageClick}>
+          <div className="card card7" onClick={navigationHandlers.handleLevelIncomepageClick}>
             <FontAwesomeIcon icon={faUserTimes} />
             <h2>Level Income Page</h2>
           </div>
-          <div className="card card8" onClick={handleDailyCommunityRewardClick}>
+          <div className="card card8" onClick={navigationHandlers.handleDailyCommunityRewardClick}>
             <FontAwesomeIcon icon={faUserTimes} />
             <h2>Daily Community Reward</h2>
           </div>
-          <div className="card card9" onClick={handleDailyEarningsClick}>
+          <div className="card card9" onClick={navigationHandlers.handleDailyEarningsClick}>
             <FontAwesomeIcon icon={faUserTimes} />
             <h2>Daily Earnings</h2>
           </div>
-          <div className="card card10" onClick={handleTotalEarningsDashboardClick}>
+          <div className="card card10" onClick={navigationHandlers.handleTotalEarningsDashboardClick}>
             <FontAwesomeIcon icon={faUserTimes} />
             <h2>Total Earnings</h2>
           </div>
@@ -190,11 +150,11 @@ const Dashboard = () => {
             <FontAwesomeIcon icon={faDollarSign} />
             <h2>FCTC Bep 20 Contract</h2>
           </a>
-          <div className="card card13" onClick={handleComingSoonClick}>
+          <div className="card card13" onClick={navigationHandlers.handleComingSoonClick}>
             <FontAwesomeIcon icon={faUserTimes} />
             <h2>ADD USDT WALLET</h2>
           </div>
-          <div className="card card14" onClick={handleComingSoonClick}>
+          <div className="card card14" onClick={navigationHandlers.handleComingSoonClick}>
             <FontAwesomeIcon icon={faUserTimes} />
             <h2>ADD BND WALLET</h2>
           </div>

@@ -5,8 +5,8 @@ import './Deposit.css';
 const Deposit = () => {
   const [depositAmount, setDepositAmount] = useState('');
   const [currency, setCurrency] = useState('usdt');
-  const [stakingPlan, ] = useState('');
-  const [stakingBonus, ] = useState('');
+  const [stakingPlan, setStakingPlan] = useState('');
+  const [stakingBonus, setStakingBonus] = useState('');
   const [username, setUsername] = useState('');
   const [transactionHash, setTransactionHash] = useState('');
   const [screenshot, setScreenshot] = useState(null);
@@ -99,7 +99,7 @@ const Deposit = () => {
             />
           </div>
           <div className="qr-code-container">
-            <img id="qr-code" src="/path/to/qr.png" alt="QR Code" />
+            <img id="qr-code"  src={require("./QR.jpeg")} alt="Logo" className="logo" width="120"height="100px" /> 
           </div>
           <div className="wallet-info">
             <p><strong>0x4Aa9B91D7BB8a6771bA579260d37981Eddee7217</strong></p>

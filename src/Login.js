@@ -14,7 +14,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-card">
-        <img src="C:\Users\mohan\sample-app\src\fctc.png" alt="FCTC Logo" />
+      <img src={require("./fctc.png")} alt="Logo" className="logo" width="120"height="100px" />
         <h2>Login</h2>
         <div className="input-group">
           <label>Email ID *</label>

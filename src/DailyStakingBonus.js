@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import './DailyStakingBonus.css';
 
 const DailyStakingBonus = () => {
@@ -13,18 +13,18 @@ const DailyStakingBonus = () => {
     });
   };
 
-  const updateBonus = useCallback(async () => {
+  const updateBonus = async () => {
     try {
       const bonus = await fetchDailyStakingBonus();
       setBonus(`$${bonus}`);
     } catch (error) {
       setBonus('Error loading bonus');
     }
-  }, []); // useCallback to prevent recreation on each render
+  };
 
   useEffect(() => {
     updateBonus();
-  }, [updateBonus]);
+  }, []);
 
   return (
     <div className="container">

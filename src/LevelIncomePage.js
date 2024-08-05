@@ -36,7 +36,7 @@ const LevelIncomePage = () => {
 
   return (
     <div className="container">
-      <img src="fctc.png" alt="Logo" className="logo" />
+      <img src={require("./fctc.png")} alt="Logo" className="logo" width="120"height="100px" />
       <h1>Level Income Page</h1>
 
       <div className="section">

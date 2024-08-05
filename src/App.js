@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './dashboard';
 import MainWallet from './mainwallet';
-import StakedCoins from './StackedCoins';
+import StackedCoins from './StackedCoins';
 import StakingCards from './StakingBonus';
 import DailyIntroducerReward from './DailyIntroducerReward';
 import IntroducerReward from './IntroducerReward';
@@ -26,10 +26,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/withdraw" element={<MainWallet />} />
-        <Route path="/Stakedcoin" element={<StakedCoins />} />
+        <Route path="/StackedCoins" element={<StackedCoins />} />
         <Route path="/stakingBonus" element={<StakingCards />} />
         <Route path="/dailyStakingBonus" element={<DailyStakingBonus />} />
-        <Route path="/dailyIntroducerReward" element={<DailyIntroducerReward />} />
+        <Route path="/DailyIntroducerReward" element={<DailyIntroducerReward />} />
         <Route path="/IntroducerReward" element={<IntroducerReward />} />
         <Route path="/LevelIncomePage" element={<LevelIncomePage />} />
         <Route path="/DailyCommunityReward" element={<DailyCommunityReward />} />
